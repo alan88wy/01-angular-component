@@ -1,0 +1,63 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<!-- v1 -->
+<!-- <div class="courses"  > -->
+
+    <!-- <course-card (click)="onCardClick()" [course] = "course"></course-card> -->
+
+    <!-- Custom Event -->
+    <!-- the CSS class (is-first and is-last) will be activated if it is the first or last element -->
+    <!-- <course-card
+        *ngFor="let course of Courses; index as i; first as isFirst; last as isLast;
+                even as isEven; odd as isOdd"
+        (courseSelected)="onCourseSelected($event)"
+        [class.is-first] = "isFirst"
+        [class.is-last] = "isLast"
+        [class.is-even] = "isEven"
+        [class.is-odd] = "isOdd"
+        [course]="course"  [cardIndex] = "i + 1">
+    </course-card>
+</div> -->
+
+<!-- <button (click)="onCoursesEdit()">Edit Courses</button> -->
+
+<div class="courses" #container >
+
+    <!-- <course-card (click)="onCardClick()" [course] = "course"></course-card> -->
+
+    <!-- Custom Event -->
+    <!-- the CSS class (is-first and is-last) will be activated if it is the first or last element -->
+    <course-card #cardRef
+        *ngFor="let course of Courses; index as i; first as isFirst; last as isLast;
+                even as isEven; odd as isOdd"
+        (courseSelected)="onCourseSelected($event)"
+        [course]="course"  [cardIndex] = "i + 1">
+
+        <!-- Content Projection - ng-content -->
+        <!-- <div courseImg #cImage >
+          <img width="300" alt="Angular Logo" *ngIf="course.iconUrl; else noImage"
+              [src]="course.iconUrl">
+        </div> -->
+
+        <!-- Angular Template -->
+        <!-- <ng-template #noImage>
+          <p>No Image is available</p>
+        </ng-template> -->
+
+        <!-- Move the above away to the course-image -->
+        <course-image [src]="course.iconUrl"></course-image>
+
+        <div class="course-description">
+          {{ course.longDescription }}
+        </div>
+
+        <h5 class="total-lessons">Total Lessons : 10</h5>
+    </course-card>
+</div>
+
+
