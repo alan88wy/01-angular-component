@@ -3,8 +3,9 @@
   <img width="300" alt="Angular Logo" *ngIf="imageUrl; else noImage"
       [src]="imageUrl">
 
-  <!-- Angular Template -->
+  <!-- Angular Template Reference -->
   <ng-template #noImage>
-    <p>No Image is available</p>
+    <p class="warn">{{ description }} has no image yet.</p>
+    <img src="assets/empty-image.png">
   </ng-template>
 </div>
