@@ -1,5 +1,5 @@
 
-##  01 Angular Overview 
+##  01 Angular Component 
 
 This is part of the Udemy Angular Core Deep Dive course that talk about Angular Components, Core Directives and Pipes.
 
