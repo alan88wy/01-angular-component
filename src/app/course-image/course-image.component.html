@@ -1,11 +1,12 @@
 <!-- Content Projection - ng-content -->
 <div courseImg #cImage >
-  <img width="300" alt="Angular Logo" *ngIf="imageUrl; else noImage"
-      [src]="imageUrl">
+  <!-- <img width="300" alt="Angular Logo" *ngIf="imageUrl; else noImage" -->
+  <img width="300" alt="Angular Logo"
+  [src]="imageUrl">
 
   <!-- Angular Template Reference -->
-  <ng-template #noImage>
+  <!-- <ng-template #noImage>
     <p class="warn">{{ description }} has no image yet.</p>
     <img src="assets/empty-image.png">
-  </ng-template>
+  </ng-template> -->
 </div>

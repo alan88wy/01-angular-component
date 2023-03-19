@@ -11,8 +11,8 @@ export class CourseImageComponent implements OnInit {
   @Input('src')
   imageUrl: string;
 
-  @Input()
-  description: string;
+  // @Input()
+  // description: string;
 
   constructor() { }
 
