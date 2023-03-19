@@ -49,14 +49,16 @@
           <p>No Image is available</p>
         </ng-template> -->
 
-        <ng-template #noImage let-courseName = "description">
+        <!-- let-courseName = declare courseName variable -->
+        <!-- <ng-template #noImage let-courseName = "description">
           <p class="warn">{{ courseName }} has no image yet.</p>
           <img src="assets/empty-image.png">
-        </ng-template>
+        </ng-template> -->
 
-        <div *ngTemplateOutlet="noImage; context: {description : course.description}" >
+        <!-- Giving template it's own variable context -->
+        <!-- <ng-container *ngTemplateOutlet="noImage; context: { description : course.description }" >
 
-        </div>
+        </ng-container> -->
 
         <!-- Move the above away to the course-image -->
         <!-- <course-image [src]="course.iconUrl" [description]="course.description" ></course-image> -->
