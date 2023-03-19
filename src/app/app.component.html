@@ -49,6 +49,15 @@
           <p>No Image is available</p>
         </ng-template> -->
 
+        <ng-template #noImage let-courseName = "description">
+          <p class="warn">{{ courseName }} has no image yet.</p>
+          <img src="assets/empty-image.png">
+        </ng-template>
+
+        <div *ngTemplateOutlet="noImage; context: {description : course.description}" >
+
+        </div>
+
         <!-- Move the above away to the course-image -->
         <!-- <course-image [src]="course.iconUrl" [description]="course.description" ></course-image> -->
         <course-image [src]="course.iconUrl" ></course-image>
