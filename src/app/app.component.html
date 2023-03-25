@@ -36,6 +36,7 @@
         *ngFor="let course of Courses; index as i; first as isFirst; last as isLast;
                 even as isEven; odd as isOdd"
                 (courseSelected)="onCourseSelected($event)"
+                [noImageTpl]="blankImage"
                 [course]="course"  [cardIndex] = "i + 1">
 
         <!-- Content Projection - ng-content -->
@@ -62,6 +63,20 @@
 
         <!-- Move the above away to the course-image -->
         <!-- <course-image [src]="course.iconUrl" [description]="course.description" ></course-image> -->
+
+        <ng-template #blankImage let-courseName="description">
+
+          <p class="warn">{{ courseName }} has no image yet.</p>
+
+          <img src="/assets/empty-image.png">
+
+        </ng-template>
+
+        <!-- Instantiate template -->
+        <!-- <ng-container *ngTemplateOutlet="blankImage; context: { description: course.description}">
+
+        </ng-container> -->
+
         <course-image [src]="course.iconUrl" ></course-image>
 
         <div class="course-description">

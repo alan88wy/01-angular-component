@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, OnInit, Output, ContentChild, AfterViewInit, ElementRef, ContentChildren, AfterContentInit, QueryList } from '@angular/core';
+import { Component, Input, EventEmitter, OnInit, Output, ContentChild, AfterViewInit, ElementRef, ContentChildren, AfterContentInit, QueryList, TemplateRef } from '@angular/core';
 import { Course } from '../model/course'
 import { CourseImageComponent } from '../course-image/course-image.component';
 
@@ -14,6 +14,9 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
 
   @Input()
   cardIndex: number;
+
+  @Input()
+  noImageTpl: TemplateRef<any>;
 
   @Output()
   courseSelected: EventEmitter<Course> = new EventEmitter<Course>();
@@ -31,6 +34,7 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
   images: QueryList<CourseImageComponent>;
 
   constructor() {}
+
   ngAfterContentInit(): void {
     console.log(this.images);
   }
