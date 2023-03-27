@@ -25,7 +25,7 @@ We can install the master branch using the following commands:
 
 Before running, you must install the required packages.
 
-    cd angular-course
+    cd 01-angular-overview
     npm install
 
 Its also possible to install the modules as usual using npm:
